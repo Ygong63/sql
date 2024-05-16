@@ -1,7 +1,11 @@
+-- SELECT
+
 SELECT *
 FROM customer
 ORDER BY customer_last_name, customer_first_name
 LIMIT 10;
+
+-- WHERE 
 
 SELECT *
 FROM customer_purchases
@@ -11,6 +15,7 @@ SELECT *, quantity * cost_to_customer_per_qty AS price
 FROM customer_purchases
 WHERE vendor_id >= 8 AND vendor_id <= 10;
 
+-- CASE 
 SELECT 
     product_id,
     product_name,
@@ -25,19 +30,12 @@ SELECT
 FROM 
     product;
 
-SELECT 
-    vendor.vendor_id,
-    vendor.vendor_name,
-    vendor.vendor_type,
-    vendor.vendor_owner_first_name,
-	vendor.vendor_owner_last_name,
-	vendor_booth_assignments.vendor_id,
-    vendor_booth_assignments.booth_number,
-    vendor_booth_assignments.market_date
+-- JOIN
+SELECT *
 FROM 
     vendor
 INNER JOIN 
-    vendor_booth_assignments ON vendor.vendor_id = vendor_booth_assignments.vendor_id
+    vendor_booth_assignments 
+	ON vendor.vendor_id = vendor_booth_assignments.vendor_id
 ORDER BY 
     vendor.vendor_name, vendor_booth_assignments.market_date;
-
