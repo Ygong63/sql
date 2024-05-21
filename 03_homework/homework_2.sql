@@ -15,6 +15,13 @@ SELECT *, quantity * cost_to_customer_per_qty AS price
 FROM customer_purchases
 WHERE vendor_id >= 8 AND vendor_id <= 10;
 
+
+SELECT *,
+       quantity * cost_to_customer_per_qty AS price
+FROM customer_purchases
+WHERE vendor_id BETWEEN 8 AND 10;
+
+
 -- CASE 
 SELECT 
     product_id,
