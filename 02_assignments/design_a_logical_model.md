@@ -46,6 +46,10 @@ Difference 2: Historical Data Tracking
 AdventureWorks: Implements Type 2 SCD to track historical data, maintaining comprehensive records of changes over time.
 Bookstore ERD: Type 1 SCD. It lacks mechanisms to retain historical data and updates that overwrite previous information.
 
+Proposed Changes:
+Add separate table for customer contact to store contact details like email and phone number.
+Add historical tracking tables for book prices and employee roles. To track changes in book prices over time and to track changes in employee roles over time.
+
 # Criteria
 
 [Assignment Rubric](./assignment_rubric.md)
