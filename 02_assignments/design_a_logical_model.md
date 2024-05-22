@@ -8,14 +8,18 @@ At the minimum it should have employee, order, sales, customer, and book entitie
 ## Question 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
 
+![Bookstore SCD](../02_assignments/Diagram/Assignment%201%20Q1%20and%20Q2.PNG)
+
 ## Question 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2?
 
 _Hint, search type 1 vs type 2 slowly changing dimensions._
 
+![Type 1 SCD](../02_assignments/Diagram/Assignment%201%20Q3%20Type%201%20SCD.PNG)
+
+![Type 2 SCD](../02_assignments/Diagram/Assignment%201%20Q3%20Type%202%20SCD.PNG)
+
 Bonus: Are there privacy implications to this, why or why not?
-```
-Your answer...
 ```
 Type 1 SCD  Overwrite Changes 
 The CUSTOMER_ADDRESS table overwrites the existing address whenever there is an update. Historical addresses are not retained, and only the current address is stored.
@@ -28,14 +32,13 @@ The CUSTOMER_ADDRESS table retains historical addresses by adding a new record e
 
 This design stores a complete history of address changes, which can be valuable for customer service and compliance purposes.
 However, retaining historical address data increases the amount of personal information stored, which can heighten privacy risks.
-
+```
 ## Question 4
 Review the AdventureWorks Schema [here](https://i.stack.imgur.com/LMu4W.gif)
 
 Highlight at least two differences between it and your ERD. Would you change anything in yours?
 ```
-Your answer...
-```
+
 AdventureWorks provides a robust and detailed schema that exemplifies best practices in database design, such as high normalization and comprehensive historical tracking. 
 
 Difference 1: Scope
@@ -50,6 +53,7 @@ Proposed Changes:
 Add separate table for customer contact to store contact details like email and phone number.
 Add historical tracking tables for book prices and employee roles. To track changes in book prices over time and to track changes in employee roles over time.
 
+```
 # Criteria
 
 [Assignment Rubric](./assignment_rubric.md)
