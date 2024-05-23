@@ -1,0 +1,18 @@
+Ethics and Equity Adjustments:
+
+Data Minimization:
+Only collect and store data that is absolutely necessary for the purposes of the application. 
+Avoid collecting excessive personal information.
+
+Security and Access to Data:
+Implement role-based access controls to ensure that only authorized personnel can access sensitive data.
+    CREATE ROLE data_entry;
+    CREATE ROLE data_analyst;
+    GRANT SELECT ON customer TO data_analyst;
+    GRANT INSERT, UPDATE ON customer TO data_entry;
+Ensure database backups are also encrypted and stored securely.
+Maintain an audit trail of who accessed or modified data and when. 
+
+Bias Mitigation:
+Regularly review and analyze data for biases that could influence outcomes or analyses. 
+Ensure that database schemas can handle diverse data types and categories to represent different groups.
